@@ -1,0 +1,12 @@
+const body=document.body, toggle=document.getElementById('themeToggle');
+const saved=localStorage.getItem('theme'); if(saved==='dark'){body.classList.add('dark');toggle.textContent='☀'}
+toggle.addEventListener('click',()=>{body.classList.toggle('dark');const dark=body.classList.contains('dark');toggle.textContent=dark?'☀':'☾';localStorage.setItem('theme',dark?'dark':'light')});
+const dot=document.querySelector('.cursor-dot'),ring=document.querySelector('.cursor-ring');
+document.addEventListener('mousemove',e=>{dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px';ring.animate({left:e.clientX+'px',top:e.clientY+'px'},{duration:250,fill:'forwards'})});
+document.querySelectorAll('a,button,.project-card').forEach(el=>{el.addEventListener('mouseenter',()=>{ring.style.width='52px';ring.style.height='52px'});el.addEventListener('mouseleave',()=>{ring.style.width='34px';ring.style.height='34px'})});
+const obs=new IntersectionObserver(entries=>entries.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(x=>obs.observe(x));
+document.querySelectorAll('.tilt').forEach(card=>{card.addEventListener('mousemove',e=>{if(innerWidth<850)return;const r=card.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;card.style.transform=`perspective(800px) rotateX(${-(y-r.height/2)/35}deg) rotateY(${(x-r.width/2)/35}deg)`});card.addEventListener('mouseleave',()=>card.style.transform='')});
+const stars=document.querySelector('.stars');for(let i=0;i<26;i++){const s=document.createElement('span');s.className='particle';s.textContent=i%3?'✦':'★';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*-8+'s';s.style.opacity=.15+Math.random()*.35;stars.appendChild(s)}
+const menu=document.querySelector('.menu-toggle'),links=document.querySelector('.nav-links');menu.addEventListener('click',()=>links.classList.toggle('open'));document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+document.querySelectorAll('[data-placeholder]').forEach(a=>a.addEventListener('click',e=>{if(a.getAttribute('href')==='#'){e.preventDefault();alert('Replace this placeholder with your '+a.dataset.placeholder+'.')}}));
+fetch('/api/profile').then(r=>r.json()).then(d=>console.log('Portfolio API connected ✓',d)).catch(()=>console.log('Backend API unavailable'));

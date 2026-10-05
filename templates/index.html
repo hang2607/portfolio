@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Creative portfolio of Vu Thi Phuong Hang, International Economics student at Foreign Trade University.">
+  <title>Hang's Little Internet Universe ★</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div class="stars" aria-hidden="true"></div>
+
+  <nav class="nav">
+    <a class="logo" href="#home">HANG<span>★</span></a>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <div class="nav-links">
+      <a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a>
+      <a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#hobbies">Hobbies</a><a href="#contact">Contact</a>
+    </div>
+    <button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode">☾</button>
+  </nav>
+
+  <main>
+    <section id="home" class="hero section">
+      <div class="doodle d1">★</div><div class="doodle d2">✦</div><div class="doodle d3">✿</div>
+      <div class="hero-copy reveal">
+        <span class="eyebrow">HELLO, INTERNET! ✦</span>
+        <h1>VU THI<br><span>PHUONG HANG</span></h1>
+        <p class="hero-role">International Economics student by day,<br>creative chaos enthusiast all the time.</p>
+        <div class="hero-actions"><a href="#projects" class="btn primary">See my stuff ↗</a><a href="#about" class="btn secondary">Meet me ↓</a></div>
+      </div>
+      <div class="hero-photo-wrap reveal">
+        <div class="photo-sticker"><span class="tape"></span><img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Portrait of Vu Thi Phuong Hang"><span class="caption">that's me! ★</span></div>
+        <span class="burst burst-pink">CURIOUS!</span><span class="burst burst-blue">CREATE<br>MORE</span>
+      </div>
+    </section>
+
+    <section id="about" class="section about-section">
+      <div class="section-heading"><span>01</span><h2>ABOUT ME</h2><span class="scribble">～～～</span></div>
+      <div class="about-grid">
+        <div class="window-card reveal"><div class="window-bar"><div><i></i><i></i><i></i></div><b>about_me.txt</b><span>×</span></div><div class="window-body"><p class="big-quote">“I have a lot of interests<br>and little patience.”</p><p>I'm a third-year International Economics student at Foreign Trade University. Somewhere between economics, visual design, photography and drawing, I'm usually making something, learning something, or getting distracted by a new idea.</p></div></div>
+        <div class="mini-notes reveal"><div class="note pink"><b>currently:</b><br>studying economics<br>+ making pretty things</div><div class="note yellow">★ Hanoi, Vietnam<br>★ FTU<br>★ always curious</div><div class="note blue">creative brain<br>loading...<br><span class="loading"><i></i></span></div></div>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <div class="section-heading"><span>02</span><h2>EDUCATION</h2><span class="scribble">✦ ✦</span></div>
+      <div class="education-card reveal"><div class="edu-year">2024<br>→ NOW</div><div><span class="pill">THIRD YEAR</span><h3>Foreign Trade University</h3><p>Bachelor's degree · International Economics</p><p class="muted">Learning how the world moves — through markets, trade, data and a suspicious amount of group work.</p></div><div class="edu-star">★</div></div>
+    </section>
+
+    <section id="skills" class="section skills-section">
+      <div class="section-heading"><span>03</span><h2>MY TOOLBOX</h2><span class="scribble">✎</span></div>
+      <div class="skill-cloud reveal"><span>Adobe Illustrator ✦</span><span>Adobe Photoshop</span><span>Photography 📷</span><span>Adobe Lightroom</span><span>Drawing ✎</span></div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-heading"><span>04</span><h2>THINGS I'VE MADE</h2><span class="scribble">★彡</span></div>
+      <p class="section-intro">A small corner for designs, illustrations and visual experiments. Hover around — they bite (gently).</p>
+      <div class="project-grid">
+        <article class="project-card tilt reveal"><div class="project-img"><img src="{{ url_for('static', filename='images/project-tet.jpg') }}" alt="Tet design project"></div><div class="project-info"><span>GRAPHIC DESIGN</span><h3>Tet Visual</h3><p>A festive illustration created for Young Media Club.</p></div></article>
+        <article class="project-card tilt reveal"><div class="project-img"><img src="{{ url_for('static', filename='images/project-with.jpg') }}" alt="Member recruitment illustration"></div><div class="project-info"><span>ILLUSTRATION</span><h3>Member Recruitment</h3><p>A dreamy space-themed visual for a recruitment campaign.</p></div></article>
+        <article class="project-card tilt reveal"><div class="project-img"><img src="{{ url_for('static', filename='images/project-art-soul.jpg') }}" alt="Art and Soul illustration"></div><div class="project-info"><span>ILLUSTRATION</span><h3>Art & Soul</h3><p>A night-time illustration built around character and atmosphere.</p></div></article>
+        <article class="project-card tilt reveal"><div class="project-img contain"><img src="{{ url_for('static', filename='images/project-mascot.png') }}" alt="Mascot illustration"></div><div class="project-info"><span>CHARACTER DESIGN</span><h3>Mascot Design</h3><p>A playful character illustration with a hand-drawn personality.</p></div></article>
+      </div>
+    </section>
+
+    <section id="experience" class="section experience-section">
+      <div class="section-heading"><span>05</span><h2>EXPERIENCE</h2><span class="scribble">✦</span></div>
+      <div class="experience-card reveal"><div class="exp-stamp">YMC<br><small>FTU</small></div><div><span class="pill pink-pill">MEDIA CLUB</span><h3>Young Media Club — Technical Team</h3><p>Turning ideas into visual content through graphic design and creative production. My club work is where I get to mix teamwork, deadlines and the mildly dangerous sentence: “I have an idea.”</p></div></div>
+    </section>
+
+    <section id="hobbies" class="section">
+      <div class="section-heading"><span>06</span><h2>OFF-SCREEN(ISH)</h2><span class="scribble">☻</span></div>
+      <div class="hobby-collage reveal"><div class="hobby-photo"><img src="{{ url_for('static', filename='images/photography.jpg') }}" alt="A photograph by Hang"><span>through my lens ↗</span></div><div class="hobby-list"><span>♫ MUSIC</span><span>🎬 MOVIES</span><span>✎ DRAWING</span><span>📷 PHOTOGRAPHY</span><span>♬ PLAYING MUSIC</span><span>✦ LEARNING RANDOM THINGS</span></div></div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="contact-window reveal"><div class="window-bar"><div><i></i><i></i><i></i></div><b>Message</b><span>×</span></div><div class="chat"><div class="bubble left">hey! you've reached the end ★</div><div class="bubble right">so... wanna say hi? 👀</div><div class="social-row"><a href="#" class="social" data-placeholder="Instagram link">◎ <span>Instagram</span></a><a href="#" class="social" data-placeholder="Facebook link">f <span>Facebook</span></a><a href="mailto:your-email@example.com" class="social">@ <span>Email</span></a></div><div class="fake-input"><span>Type a message...</span><b>＋</b></div></div></div>
+      <h2 class="footer-title">SEE YOU AROUND <span>★</span></h2><p class="footer-copy">Designed & built with curiosity, caffeine and too many browser tabs.</p>
+    </section>
+  </main>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
